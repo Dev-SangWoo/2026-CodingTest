@@ -1,7 +1,7 @@
 # 📝 문제 정보
 # 문제 이름: 글자 이어 붙여 문자열 만들기
 # 난이도/출처: 프로그래머스 Lv.0
-# 핵심 개념: 인덱스 슬라이싱
+# 핵심 개념: 순회 및 문자열 합치기
 
 # --------------------------------------------
 
@@ -20,15 +20,27 @@
 
 # ✅ 최종 코드 (Code)
 # 여기에 깔끔하게 정리된 코드를 붙여넣으세요.
-def solution(num_list, n):
+def solution(my_string, index_list):
+    answer = ''
+    for i in index_list:
+        answer += my_string[i]
     
-    answer = num_list[::n]
     return answer
-
-print(solution(0,"wsdawsdassw"))
 
 # --------------------------------------------
 
 # 🧠 배운 점 & 복습할 내용
 # 문제에서 새로 알게 된 문법이나 테크닉을 적습니다.
 # 다음에 비슷한 문제를 만난다면 어떻게 접근할지 한 줄로 요약합니다.
+
+
+
+
+def solution(my_string, index_list):
+    return ''.join([my_string[idx] for idx in index_list])
+#리스트컴프리헨션으로 idx값을 하나씩 가져와서 my_string 인덱스로 사용한뒤 .join으로 리스트를 문자열로 바꾼다.
+
+
+def solution(my_string, index_list):
+    return ''.join(map(lambda x: my_string[x], index_list))
+# map으로 순회해도됨
